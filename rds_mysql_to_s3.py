@@ -15,7 +15,7 @@
 import boto3, botocore
 
 ## Set the values below if using Lambda Scheduled Event as an Event Source, otherwise leave empty and send data through the Lambda event payload
-S3BCUKET=''
+S3BUCKET=''
 S3PREFIX=''
 RDSINSANCE=''
 LOGNAME=''
@@ -33,7 +33,7 @@ def lambda_handler(event, context):
 		lastRecievedFile = S3BucketPrefix + event['lastRecievedFile']
 		region = event['Region']
 	else:
-		S3BucketName = S3BCUKET
+		S3BucketName = S3BUCKET
 		S3BucketPrefix = S3PREFIX
 		RDSInstanceName = RDSINSANCE
 		logNamePrefix = LOGNAME
